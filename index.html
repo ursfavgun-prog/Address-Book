@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Kontak</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Manajemen Kontak</h1>
+            <p>Kelola kontak Anda dengan mudah dan efisien</p>
+        </header>
+
+        <div class="app-container">
+            <div class="sidebar">
+                <h2>Aksi Cepat</h2>
+                <button id="addContactBtn" class="btn btn-primary">➕ Tambah Kontak</button>
+                <button id="showListBtn" class="btn btn-outline">📋 Tampilkan Daftar</button>
+                <button id="exitBtn" class="btn btn-danger">❌ Keluar</button>
+            </div>
+
+            <div class="main-content">
+                <!-- Daftar Kontak -->
+                <div id="contactListSection" class="content-section active">
+                    <h2>📞 Daftar Kontak</h2>
+                    <div id="contactAlert" class="alert alert-info" style="display: none;"></div>
+                    <ul id="contactList" class="contact-list">
+                        <!-- Kontak akan ditampilkan di sini -->
+                    </ul>
+                    <div id="emptyState" class="empty-state" style="display: none;">
+                        <i>📱</i>
+                        <h3>Belum ada kontak</h3>
+                        <p>Tambahkan kontak pertama Anda dengan klik tombol "Tambah Kontak"</p>
+                    </div>
+                </div>
+
+                <!-- Form Tambah Kontak -->
+                <div id="addContactForm" class="content-section">
+                    <h2>➕ Tambah Kontak Baru</h2>
+                    <form id="addContactFormContent">
+                        <div class="form-group">
+                            <label for="name">Nama *</label>
+                            <input type="text" id="name" required placeholder="Masukkan nama lengkap">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Masukkan email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telepon</label>
+                            <input type="tel" id="phone" placeholder="Masukkan nomor telepon">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-success">💾 Simpan Kontak</button>
+                            <button type="button" id="cancelAddBtn" class="btn btn-outline">✖ Batal</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Form Edit Kontak -->
+                <div id="editContactForm" class="content-section">
+                    <h2>✏️ Edit Kontak</h2>
+                    <form id="editContactFormContent">
+                        <input type="hidden" id="editId">
+                        <div class="form-group">
+                            <label for="editName">Nama *</label>
+                            <input type="text" id="editName" required placeholder="Masukkan nama lengkap">
+                        </div>
+                        <div class="form-group">
+                            <label for="editEmail">Email</label>
+                            <input type="email" id="editEmail" placeholder="Masukkan email">
+                        </div>
+                        <div class="form-group">
+                            <label for="editPhone">Telepon</label>
+                            <input type="tel" id="editPhone" placeholder="Masukkan nomor telepon">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-success">💾 Perbarui Kontak</button>
+                            <button type="button" id="cancelEditBtn" class="btn btn-outline">✖ Batal</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Konfirmasi Hapus -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">⚠️ Konfirmasi Penghapusan</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Apakah Anda yakin ingin menghapus kontak ini?</p>
+                <p><strong id="deleteContactName"></strong></p>
+                <p>Operasi ini tidak dapat dibatalkan.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="confirmDeleteBtn" class="btn btn-danger">✅ Ya, Hapus</button>
+                <button id="cancelDeleteBtn" class="btn btn-outline">✖ Batal</button>
+            </div>
+        </div>
+    </div>
+<script src="Address.js"></script>
+</body>
+</html>
