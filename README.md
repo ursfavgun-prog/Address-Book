@@ -4,8 +4,8 @@ A simple address book application to store and manage contact information.
 
 ## Link
 
-- URL Deployment: 
-- Repository :
+- URL Deployment: https://vercel.com/tara-mahardikas-projects/address-book/2qMmKAoSv7nKFHK9GK5VMDiuVu8y
+- Repository : https://github.com/ursfavgun-prog/Address-Book.git
 
 ## Features
 
